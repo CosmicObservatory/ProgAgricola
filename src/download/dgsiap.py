@@ -19,7 +19,8 @@ class DGScraper:
     def __init__(self, ref, info="Agricola"):
         assert info in ["Agricola", "Pecuaria"], "Revisa la información a consultar"
         link = ref + info + ".php"
-        response = r.get(link) 
+        print(link)
+        response = r.get(link, stream=True) 
         response.raise_for_status()
         self.status = response.status_code
         self.response = response
@@ -29,7 +30,7 @@ class DGScraper:
     
     def preprocess(self):
         self.dg_main = self.dgsiap.find("main")
-        self.sections = dg_main.find_all("section", recursive=False)
+        self.sections = self.dg_main.find_all("section", recursive=False)
 
     def blocks_intro(self):
         history = self.sections[3]

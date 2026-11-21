@@ -1,25 +1,5 @@
 [
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee (knuth84?) for additional discussion of literate programming.\n\nx = 20\nprint(x)\n\n20",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Proyecto Final",
@@ -60,26 +40,6 @@
     ]
   },
   {
-    "objectID": "extract.html",
-    "href": "extract.html",
-    "title": "Ingesta de Datos",
-    "section": "",
-    "text": "La historia.\nLa pregunta Nuestro analisis explorará la distribución de los cultivos a nivel municipio. Revisando los 3 bloques principales en la agricultura.\nIndagando como estos 3 bloques actuan sobre la distribución actual y explorar escenarios de mejora.\nNo se parté de cero. México ha sembrado desde hace muchos años. Por lo tanto, nuestro analisis se centrará en producción agricola pasada. El pasado agricola, y en general la información agricola del pais, es gestionada por el Servicio de Información Agroalimentaria y Pecuaria o SIAP. En particular, la producción agricola historica se encuentra en el portal de Datos Abiertos de la Dirección General del Servicio de Información Agroalimentaria y Pesquera (2026).\nPara obtener los datos de la producción agrícola partiremos de la pagina oficial\nCuando uno observa el enlace ve los datos de la producción agrícola podemos ver 3 tipos de datos:\nPodemos descargarlos de uno a uno. Pero usamos una técnica para obtener datos de forma automática conocida como WebScraping.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Ingesta de Datos</span>"
-    ]
-  },
-  {
-    "objectID": "extract.html#datos.",
-    "href": "extract.html#datos.",
-    "title": "Ingesta de Datos",
-    "section": "",
-    "text": "El clima.\nEl suelo.\nLa historia\n\n\n\nLa historia.\nNo se parté de cero. México ha sembrado desde hace muchos años. Por lo tanto, nuestro analisis se centrará en producción agricola pasada. El pasado agricola, y en general la información agricola del pais, es gestionada por el Servicio de Información Agroalimentaria y Pecuaria o SIAP. En particular, la producción agricola historica se encuentra en el portal de Datos Abiertos de la Dirección General del SIAP.\n\n\nEl Clima.\nPartiendo del supuesto empirico que variables metereologicas como la lluvia, la temperatura media definen el cultivo plantado en cada municipio. Actualmente existen distintas fuentes para consultar la información meteorologica de una región. Para este analisis nos decidimos por utilizar la información meteoreologica proporcionada por la NASA mediante su portal NASA POWER.\n\n\nEl Suelo.\nLas variables principales al considerar el suelo como un elemento de nuestro analisis es su composición y su uso. La composición, al igual que el clima puede dar señales de cual es el cultivo más adecuado en una región determinada y su uso. Variable “trivial” que puede darnos información con respecto a los limites teóricos de producción agricola.\nPara este ultimo apartado utilizamos 3 fuentes. Para la composición utilizamos los mapas de edafologia que proporcioa INEGI que muestran la distribución de los tipos de suelo en México. Para el Uso de Suelo se utilizaron dos fuentes complementarias. Por un lado se utilizaron las Series de la Carta de Uso de Suelo y Vegetación de INEGI y el proyecto MAPBIOMAS México. Ambos nos presentan como se distribuye cada tipo de agricultura en el pais.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Ingesta de Datos</span>"
-    ]
-  },
-  {
     "objectID": "index.html#colaboración.",
     "href": "index.html#colaboración.",
     "title": "Proyecto Final",
@@ -87,6 +47,26 @@
     "text": "Colaboración.\nEste proyecto esta basado de la historia con datos “Producción Agrícola” de la materia de Ingienería de Caractéristicas de la Maestría de Ciencia de Datos de Sonora.\nProyecto Agronomía",
     "crumbs": [
       "Producción Agricola"
+    ]
+  },
+  {
+    "objectID": "extract.html",
+    "href": "extract.html",
+    "title": "Ingesta de Datos",
+    "section": "",
+    "text": "La historia.\nLa pregunta Nuestro analisis explorará la distribución de los cultivos a nivel municipio. Revisando los 3 bloques principales en la agricultura.\nIndagando como estos 3 bloques actuan sobre la distribución actual y explorar escenarios de mejora.\nNo se parté de cero. México ha sembrado desde hace muchos años. Por lo tanto, nuestro analisis se centrará en producción agricola pasada. El pasado agricola, y en general la información agricola del pais, es gestionada por el Servicio de Información Agroalimentaria y Pecuaria o SIAP. En particular, la producción agricola historica se encuentra en el portal de Datos Abiertos de la Dirección General del Servicio de Información Agroalimentaria y Pesquera (2026).\nPara obtener los datos de la producción agrícola partiremos de la pagina oficial\nCuando uno observa el enlace ve los datos de la producción agrícola podemos ver 3 tipos de datos:\nPodemos descargarlos de uno a uno. Pero usamos una técnica para obtener datos de forma automática conocida como WebScraping.\nObteniendo el diccionario maestro. Nuestra guía de los enlaces que usaremos para descargar los archivos.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Ingesta de Datos</span>"
+    ]
+  },
+  {
+    "objectID": "extract.html#la-historia.",
+    "href": "extract.html#la-historia.",
+    "title": "Ingesta de Datos",
+    "section": "",
+    "text": "datasources.py\n\nURL_REF_DGSIAP = \"https://nube.agricultura.gob.mx/datosAbiertos/\"\n\n\n\nMunicipal (2003-2025),\nNacional (1980-2002),\nNo seguimiento (2020-2021).\n\n\n\n\nget_data.py\n\nfrom config.datasources import URL_REF_DGSIAP\nfrom download.dgsiap import DGScraper\n\nwebscraper = DGScraper(URL_REF_DGSIAP)\nprint(webscraper.link)\nprint(webscraper.status)\n\nwebscraper.parser()\nprint(webscraper.dgsiap)\n\nwebscraper.preprocess()\nprint(webscraper.sections)\n\nwebscraper.blocks_intro()\n\nprint(webscraper.dict_master())\n\n\n\n\nget_data.py\n\nfrom download.get_data import mun\n\nmun.download()",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Ingesta de Datos</span>"
     ]
   },
   {
@@ -117,16 +97,6 @@
     "text": "Dirección General del Servicio de Información Agroalimentaria y\nPesquera. 2026. “Estadística de Producción Agrícola: Datos\nAbiertos.” Secretaría de Agricultura y Desarrollo Rural. https://agricultura.gob.mx.",
     "crumbs": [
       "Referencias"
-    ]
-  },
-  {
-    "objectID": "extract.html#la-historia.",
-    "href": "extract.html#la-historia.",
-    "title": "Ingesta de Datos",
-    "section": "",
-    "text": "datasources.py\n\nURL_REF_DGSIAP = \"https://nube.agricultura.gob.mx/datosAbiertos/\"\n\n\n\nMunicipal (2003-2025),\nNacional (1980-2002),\nNo seguimiento (2020-2021).",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Ingesta de Datos</span>"
     ]
   }
 ]

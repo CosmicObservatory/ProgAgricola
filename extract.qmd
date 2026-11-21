@@ -29,11 +29,43 @@ Cuando uno observa el enlace ve los datos de la producción agrícola podemos ve
 Podemos descargarlos de uno a uno. Pero usamos una técnica para obtener datos de forma automática conocida como WebScraping. 
 
 
+```{.python filename="get_data.py"}
+from config.datasources import URL_REF_DGSIAP
+from download.dgsiap import DGScraper
 
+webscraper = DGScraper(URL_REF_DGSIAP)
+print(webscraper.link)
+print(webscraper.status)
+
+webscraper.parser()
+print(webscraper.dgsiap)
+
+webscraper.preprocess()
+print(webscraper.sections)
+
+webscraper.blocks_intro()
+
+print(webscraper.dict_master())
+
+```
+
+Obteniendo el diccionario maestro. Nuestra guía de los enlaces que usaremos para descargar los archivos. 
+
+
+```{.python filename="get_data.py"}
+from download.get_data import mun
+
+mun.download()
+```
 
 ## El Clima.
 
 Partiendo del supuesto empirico que variables metereologicas como la lluvia, la temperatura media definen el cultivo plantado en cada municipio. Actualmente existen distintas fuentes para consultar la información meteorologica de una región. Para este analisis nos decidimos por utilizar la información meteoreologica proporcionada por la NASA mediante su portal NASA POWER.
+
+
+
+
+
 
 ## El Suelo.
 
