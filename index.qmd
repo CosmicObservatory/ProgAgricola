@@ -1,0 +1,22 @@
+# Producción Agricola {.unnumbered}
+
+## Motivación
+
+México, según el DGSIAP, es el décimo productor agrícola a nivel mundial. Sin embargo, resulta curioso como paises como paises como Indonesia, Pakistan y Nigeria, siendo más pequeños, producen mayor cantidad. Considerando que Nigeria produce $30\%$ más que México siendo $50\%$ más pequeño motiva investigar si México tiene posibilidad a aumentar.
+
+## Objetivo. 
+
+A partir de nuestra primera. Nuestro proyecto realizara un analisis a la distribución de los cultivos del pais con la intención de explorar nuevas propuestas con la intención de aumentar la producción agricola nacional.
+
+
+## Contenido.
+
+En este libro exploraremos la construcción de una historia con datos. Cada capítulo de este libro corresponde a una etapa distinta del proceso de historia con datos.
+
+
+## Colaboración.
+
+Este proyecto esta basado de la historia con datos "Producción Agrícola" de la materia de Ingienería de Caractéristicas de la Maestría de Ciencia de Datos de Sonora. 
+
+[Proyecto Agronomía](https://github.com/MCDagro3/proyecto_agronomia)
+

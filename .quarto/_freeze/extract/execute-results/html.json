@@ -1,0 +1,12 @@
+{
+  "hash": "be9793168044d54db4979eda416d7f53",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Ingesta de Datos\n\nLa pregunta \nNuestro analisis explorará la distribución de los cultivos a nivel municipio. Revisando los 3 bloques principales en la agricultura. \n\n* El clima.\n* El suelo.\n* La historia\n\nIndagando como estos 3 bloques actuan sobre la distribución actual y explorar escenarios de mejora.\n\n## La historia.\n\nNo se parté de cero. México ha sembrado desde hace muchos años. Por lo tanto, nuestro analisis se centrará en producción agricola pasada. El pasado agricola, y en general la información agricola del pais, es gestionada por el Servicio de Información Agroalimentaria y Pecuaria o SIAP. En particular, la producción agricola historica se encuentra en el portal de Datos Abiertos de la @dgsiap_agricola_2026.\n\nPara obtener los datos de la producción agrícola partiremos de la pagina oficial\n\n## El Clima.\n\nPartiendo del supuesto empirico que variables metereologicas como la lluvia, la temperatura media definen el cultivo plantado en cada municipio. Actualmente existen distintas fuentes para consultar la información meteorologica de una región. Para este analisis nos decidimos por utilizar la información meteoreologica proporcionada por la NASA mediante su portal NASA POWER.\n\n## El Suelo.\n\nLas variables principales al considerar el suelo como un elemento de nuestro analisis es su composición y su uso. La composición, al igual que el clima puede dar señales de cual es el cultivo más adecuado en una región determinada y su uso. Variable \"trivial\" que puede darnos información con respecto a los limites teóricos de producción agricola. \n\nPara este ultimo apartado utilizamos 3 fuentes. Para la composición utilizamos los mapas de edafologia que proporcioa INEGI que muestran la distribución de los tipos de suelo en México. Para el Uso de Suelo se utilizaron dos fuentes complementarias. Por un lado se utilizaron las Series de la Carta de Uso de Suelo y Vegetación de INEGI y el proyecto MAPBIOMAS México. Ambos nos presentan como se distribuye cada tipo de agricultura en el pais. \n\n",
+    "supporting": [
+      "extract_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

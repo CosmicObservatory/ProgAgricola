@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "prodagro"
+version = "0.1.0"
+requires-python = "==3.14.*"
+dependencies = [
+    "bs4>=0.0.2",
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
+    "lxml>=6.1.3",
+    "requests>=2.34.2",
+    "yarl>=1.25.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/config",
+            "src/download"]

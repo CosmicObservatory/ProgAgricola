@@ -1,0 +1,12 @@
+{
+  "hash": "68e871858ba47445ca2a1be66f20404a",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Introduction\n\nThis is a book created from markdown and executable code.\n\nSee @knuth84 for additional discussion of literate programming.\n\n::: {#c40ee8c3 .cell execution_count=1}\n``` {.python .cell-code}\nx = 20\nprint(x)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n20\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "intro_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

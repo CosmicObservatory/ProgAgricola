@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "Proyecto Final"
+  author: "David Peña Peralta"
+  date: "11/21/2026"
+  chapters:
+    - index.qmd
+    - extract.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    number-sections: false
+  pdf:
+    documentclass: scrreprt
+    cite-method: biblatex
+
+
+
