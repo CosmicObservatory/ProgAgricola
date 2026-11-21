@@ -6,25 +6,25 @@ from yarl import URL
 
 def parse_link(url, base):
     y_url= URL(url)
-    link = base.with_query(y_url.query)
+    link = URL(base).with_query(y_url.query)
     return link
 
 
 # WebScraping de la página del DGSIAP
 webscraper = DGScraper(URL_REF_DGSIAP)
-print(webscraper.link)
-print(webscraper.status)
+# print(webscraper.link)
+# print(webscraper.status)
 
 webscraper.parser()
-print(webscraper.dgsiap)
+# print(webscraper.dgsiap)
 
 webscraper.preprocess()
-print(webscraper.sections)
+# print(webscraper.sections)
 
 webscraper.blocks_intro()
 
 master_dict = webscraper.dict_master()
-print(master_dict)
+# print(master_dict)
 
 
 # Descarga de los datos
@@ -39,4 +39,4 @@ mun_datasets = municipal_tree['Datasets']
 mun = INEGITree("DGSIAP", parse_link(mun_metadata, URL_API_DGSIAP), [
     parse_link(data, URL_API_DGSIAP) for data in mun_datasets])
 mun.metadata(municipal_tree['Metadata'])
-mun.download()
+# mun.download()

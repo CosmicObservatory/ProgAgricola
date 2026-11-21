@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - extract.qmd
+    - preprocess.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -19,6 +19,7 @@ class DGScraper:
     def __init__(self, ref, info="Agricola"):
         assert info in ["Agricola", "Pecuaria"], "Revisa la información a consultar"
         link = ref + info + ".php"
+        self.link = link
         print(link)
         response = r.get(link, stream=True) 
         response.raise_for_status()

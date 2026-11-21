@@ -1,0 +1,45 @@
+# Preprocesamiento.
+
+Antes del analisis. Haremos un paso intermedio para asegurarnos que los datos son usables.
+
+
+## DGSIAP
+
+Comenzaremos con los datos centrales, la producción agrícola por año.
+
+```{python}
+from config.paths import PATH_FOLDERDATA
+import os
+
+PATH_PRODAGRO_DATA = PATH_FOLDERDATA / "pure" / "DGSIAP"
+puresets = os.listdir(PATH_PRODAGRO_DATA)
+
+datadict = puresets[0]
+datasets = puresets[1:]
+print("Diccionario de Datos", datadict)
+for d in datasets:
+    print(d)
+
+```
+
+Entonces, comenzamos a leerlos.
+
+```{python}
+import pandas as pd
+
+data = [PATH_PRODAGRO_DATA / dset for dset in datasets]
+
+try:
+    testfile = pd.read_csv(data[0])
+except UnicodeDecodeError as e:
+    print(e)
+
+```
+
+Como podemos ver. Los datos no son legibles después de descargarlos. Y el error indica que `pandas` no pudo identificar el encoding. Entonces vamos a corregirlo y preparar los datos para el analisis de datos.
+
+```{python}
+import cchardet
+
+
+```

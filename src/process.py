@@ -25,7 +25,7 @@ print(master_dict)
 
 def parse_link(url, base):
     y_url= URL(url)
-    link = base.with_query(y_url.query)
+    link = URL(base).with_query(y_url.query)
     return link
 
 

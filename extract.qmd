@@ -52,7 +52,7 @@ print(webscraper.dict_master())
 Obteniendo el diccionario maestro. Nuestra guía de los enlaces que usaremos para descargar los archivos. 
 
 
-```{.python filename="get_data.py"}
+```{python filename="get_data.py"}
 from download.get_data import mun
 
 mun.download()
@@ -62,13 +62,28 @@ mun.download()
 
 Partiendo del supuesto empirico que variables metereologicas como la lluvia, la temperatura media definen el cultivo plantado en cada municipio. Actualmente existen distintas fuentes para consultar la información meteorologica de una región. Para este analisis nos decidimos por utilizar la información meteoreologica proporcionada por la NASA mediante su portal NASA POWER.
 
-
-
-
+En este caso no es posible hacer Web Scraping de los datos. NASA POWER usa una API. Así que aplicaremos la idea principal vista con anterioridad pero con la documentación de la API.
 
 
 ## El Suelo.
 
 Las variables principales al considerar el suelo como un elemento de nuestro analisis es su composición y su uso. La composición, al igual que el clima puede dar señales de cual es el cultivo más adecuado en una región determinada y su uso. Variable "trivial" que puede darnos información con respecto a los limites teóricos de producción agricola. 
 
-Para este ultimo apartado utilizamos 3 fuentes. Para la composición utilizamos los mapas de edafologia que proporcioa INEGI que muestran la distribución de los tipos de suelo en México. Para el Uso de Suelo se utilizaron dos fuentes complementarias. Por un lado se utilizaron las Series de la Carta de Uso de Suelo y Vegetación de INEGI y el proyecto MAPBIOMAS México. Ambos nos presentan como se distribuye cada tipo de agricultura en el pais. 
+Para este ultimo apartado utilizamos 3 fuentes. Para la composición utilizamos los mapas de edafologia que proporcioa INEGI que muestran la distribución de los tipos de suelo en México. Para el Uso de Suelo se utilizaron dos fuentes complementarias. Por un lado se utilizaron las Series de la Carta de Uso de Suelo y Vegetación de INEGI y el proyecto MAPBIOMAS México. Ambos nos presentan como se distribuye cada tipo de agricultura en el pais.
+
+Para la gestión de los datos georeferenciados necesitaremos el mapa de México y el de las Zonas Agricolas.
+
+```{python}
+from zipfile import ZipFile
+from config.paths import PATH_FOLDERDATA
+
+
+with ZipFile(PATH_FOLDERDATA /"pure"/"INEGI"/ "usv_250k_serie_VII_889463842781.zip", "r") as mapagro:
+    mapagro.extractall(PATH_FOLDERDATA / "raw" / "INEGI")
+
+with ZipFile(PATH_FOLDERDATA / "pure" / "INEGI"/ "MexicoBase.zip", "r") as mexico:
+    mexico.extractall(PATH_FOLDERDATA / "raw" / "INEGI")
+
+```
+
+Con todo lo anterior continuaremos al preprocesamiento de los datos.
